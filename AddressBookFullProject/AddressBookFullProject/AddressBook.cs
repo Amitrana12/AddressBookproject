@@ -62,8 +62,16 @@ namespace AddressBookFullProject
                 }
                 else
                 {
-                    Console.WriteLine("Contact not found with first name '{0}'!", first_name);
+                    Console.WriteLine($"Contact not found with first name '{first_name}'!\n----------");
                 }
+            }
+        }
+        public void DisplayContacts()
+        {
+            foreach (Contacts contact in contactList)
+            {
+                Console.WriteLine($"First Name : {contact.first_name}\nLast Name : {contact.last_name}\nAddress : {contact.address}\nCity : {contact.city}\nState : {contact.state}\nZip : {contact.zip}\nPhone Number : {contact.phone_number}\nEmail : {contact.email}\n--------------------------");
+             
             }
 
         }
