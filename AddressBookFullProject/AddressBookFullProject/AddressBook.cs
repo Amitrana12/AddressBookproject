@@ -18,7 +18,7 @@ namespace AddressBookFullProject
         {
             Contacts contact = new Contacts(first_name, LastName, address, city, state, zip, phone_number, email);
             contactList.Add(contact);
-            Console.WriteLine("Thankyou!! (^_^) Contact added Successfully !");
+            Console.WriteLine("Thankyou!! (^_^) Contact added Successfully !\n--------------------------");
         }
 
         public void EditContact(string first_name)
@@ -41,13 +41,31 @@ namespace AddressBookFullProject
                     contact.phone_number = Convert.ToInt64(Console.ReadLine());
                     Console.WriteLine("Enter Email : ");
                     contact.email = Console.ReadLine();
-                    Console.WriteLine("Contact Updated Successfully !");
+                    Console.WriteLine("Contact Updated Successfully !\n-----------------------------");
+                }
+                else
+                {
+                    Console.WriteLine($"Contact not found with first name '{first_name}'!\n------------------");
+                }
+            }
+        }
+        public void DeleteContact(string first_name)
+        {
+
+            foreach (Contacts contact in contactList)
+            {
+                if (first_name.Equals(contact.first_name))
+                {
+                    contactList.Remove(contact);
+                    Console.WriteLine("Contact Deleted Successfully !\n----------------------------");
+                    break;
                 }
                 else
                 {
                     Console.WriteLine("Contact not found with first name '{0}'!", first_name);
                 }
             }
+
         }
     }
 }
