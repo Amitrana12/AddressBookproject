@@ -111,7 +111,7 @@ namespace AddressBookFullProject
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Please enter integer options only");
+                    Console.WriteLine("Please enter integer Value only");
                 }
             } while (isRepeat.Equals("yes"));
         }
@@ -140,7 +140,7 @@ namespace AddressBookFullProject
             }
             catch (Exception)
             {
-                Console.WriteLine("Zip and Phone number must be integers only");
+                Console.WriteLine("oops!!--Zip and Phone number must be integers only");
             }
         }
     }
