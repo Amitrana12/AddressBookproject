@@ -18,14 +18,17 @@ namespace AddressBookFullProject
         public void AddContact(string first_name, string LastName, string address, string city, string state, int zip, long phone_number, string email)
         {
             bool duplicate = equals(first_name);
-            if (!duplicate)
+            if (duplicate)
+            {
+                Console.WriteLine($"Can't add Contact with duplicate first name. '{first_name}' is already exit in this address book");
+            }
+           else
             {
                 Contacts contact = new Contacts(first_name, LastName, address, city, state, zip, phone_number, email);
                 contactList.Add(contact);
                 Console.WriteLine("Contact added Successfully !\n---------------------");
             }
-            else
-                Console.WriteLine("Cannot add duplicate Contact first name\n----------------");
+           
         }
 
         private bool equals(string first_name)
@@ -69,7 +72,7 @@ namespace AddressBookFullProject
             }
                 else
                 {
-                    Console.WriteLine("This contact address book is empty. First add contact then try Editing");
+                    Console.WriteLine("soory!!This contact address book is empty. First add contact then try Editing\n---------------");
                 }
             }
         public void DeleteContact(string first_name)
@@ -85,7 +88,7 @@ namespace AddressBookFullProject
                         {
                             thereExist = 0;
                             contactList.Remove(contact);
-                            Console.WriteLine("Contact Deleted Successfully !");
+                            Console.WriteLine("Contact Deleted Successfully !\n------------------");
                             break;
                         }
                     }
@@ -96,7 +99,7 @@ namespace AddressBookFullProject
             }
                 else
                 {
-                    Console.WriteLine("This contact address book is empty. First add contact then try Deleting");
+                    Console.WriteLine("This contact address book is empty. First add contact then try Deleting\n--------------------------");
                 }
             }
 
@@ -113,7 +116,7 @@ namespace AddressBookFullProject
             }
             else
             {
-                Console.WriteLine("This contact address book is empty. First add contact then try Displaying");
+                Console.WriteLine("This contact address book is empty. First add contact then try Displaying\n---------------");
             }
         }
     }

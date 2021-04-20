@@ -7,7 +7,7 @@ namespace AddressBookFullProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcomr to my Address Book Full project by Amit Rana ");
+            Console.WriteLine("Welcome to my Address Book Full project by Amit Rana ");
             Dictionary<string, AddressBook> addressBookDict = new Dictionary<string, AddressBook>();
             string isRepeat = "yes";
             bool reLoop = false;
