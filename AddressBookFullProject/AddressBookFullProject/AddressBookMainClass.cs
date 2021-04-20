@@ -44,7 +44,7 @@ namespace AddressBookFullProject
                     {
                         Console.WriteLine(k);
                     }
-                    Console.WriteLine("Choose option to procced further \n1.Add Contact \n2.Edit Contact \n3.Delete Contact  \n4.Display Contacts \n5.Exit");
+                    Console.WriteLine("Choose option to procced further \n1.Add Contact \n2.Edit Contact \n3.Delete Contact  \n4.Display Contacts \n5.Search Person \n6.Exit");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
                     {
@@ -102,7 +102,22 @@ namespace AddressBookFullProject
                             addressBookDict[displayContactInAddressBook].DisplayContacts();
                             break;
                         case 5:
+                            Console.WriteLine("Enter City OR State ");
+                            string findPersonFromPlace = Console.ReadLine();
+                            foreach (var dict in addressBookDict)
+                            {
+                                List<string> listOfPerson = new List<string>();
+                                listOfPerson = dict.Value.findPerson(findPersonFromPlace);
+                                foreach (var element in listOfPerson)
+                                {
+                                    Console.WriteLine("'" + element + "'" + " belongs to '{0}'", findPersonFromPlace);
+                                }
+
+                            }
+                            break;
+                        case 6:
                             isRepeat = "no";
+                            Console.WriteLine("----------THANKYOU(*_*)----------");
                             break;
                         default:
                             Console.WriteLine("Please enter valid option");
